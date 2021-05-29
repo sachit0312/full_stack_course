@@ -87,7 +87,7 @@ app.put('/api/notes/:id', (request, response) => {
   const id = Number(request.params.id)
   const noteNew = notes.find(note => note.id === id)
 
-  if (note) {
+  if (noteNew) {
     changedNote={...noteNew,important:!noteNew.important}
     notes.map(note => note.id !== id ? note : changedNote)
     response.json(changedNote)
